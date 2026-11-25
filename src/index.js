@@ -1,4 +1,3 @@
-
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
@@ -111,21 +110,8 @@ export default {
   }
 };
 
-async function sendDiscord(webhookUrl, message, allowEveryone = true) {
-  const response = await fetch(webhookUrl, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-      content: message,
-      allowed_mentions: {
-        parse: allowEveryone ? ["everyone"] : []
-      }
-    })
-  });
-
-  if (!response.ok) {
-    throw new Error(`Discord webhook failed: ${response.status}`);
-  }
-}
+await sendDiscord(
+  env.HEART_WEBHOOK_URL,
+  `💓 **${payload.node}** — heartbeat received.`,
+  true
+);
