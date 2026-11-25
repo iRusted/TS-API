@@ -5,7 +5,7 @@ compatibility_date = "2026-11-25"
 [[d1_databases]]
 binding = "DB"
 database_name = "rustystatus"
-database_id = "YOUR_DATABASE_ID"
+database_id = "5c8919cb-8b48-4781-a8fd-4739cdd8e1b5"
 
 [triggers]
 crons = ["* * * * *"]
